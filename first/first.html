@@ -4,98 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="ssg\script.js"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3/dist/JsBarcode.all.min.js"></script>
-    <link rel="stylesheet" href="ssg\first\finalstyle.css">
-       <script>
-        function Clicked(){
-
-      //ENTER KEY PRESSED
-      var inputs = document.querySelectorAll('input[type="text"]');
-      inputs.forEach(function(input, index) {
-        input.addEventListener('keypress', function(event) {
-            // Check if Enter key is pressed
-            if (event.key === 'Enter') {
-                // Focus on the next input field
-                var nextIndex = index + 1;
-                if (nextIndex < inputs.length) {
-                    inputs[nextIndex].focus();
-                }
-            }
-        });
-    });
-
-    var name = document.getElementById('Name').value;
-    var course = document.getElementById('Course').value;
-    var year = document.getElementById('Year').value;
-    var section = document.getElementById('Section').value;
-    var id = document.getElementById('StudentID').value;
-    var phone = document.getElementById('PhoneNumber').value;
-    var email = document.getElementById('Email').value;
-    var color = document.getElementById('Color').value;
-    var size = document.getElementById('Size').value;
-    var quan = parseInt(document.getElementById('Quantity').value);
-    var randomNumber = Math.floor(Math.random() * 100000000);
-    var price = 220;
-
-    // var div = document.getElementById('center');
-    // if (div.style.display === 'none') {
-    //     div.style.display = 'block'; // Change to 'block' to show div
-    // } 
-    
-    if (name === "" || course === "" || year === "" || section === "" || id === "" || phone === "" || email === "") {
-        document.getElementById('warn').innerHTML = "*All fields must be filled!";
-    } else {
-        document.getElementById('tracknum').innerHTML = randomNumber;
-        document.getElementById('disName').innerHTML = "Name: " + name;
-        document.getElementById('disCourse').innerHTML = "Course: " + course;
-        document.getElementById('disYear').innerHTML = "Year: " + year;
-        document.getElementById('disSection').innerHTML = "Section: " + section;
-        document.getElementById('disID').innerHTML = "Student ID: " + id;
-        document.getElementById('disPhone').innerHTML = "Phone Number: " + phone;
-        document.getElementById('disEmail').innerHTML = "Email: " + email;
-        document.getElementById('disColor').innerHTML = "Color: " + color;
-        document.getElementById('disSize').innerHTML = "Size: " + size;
-        document.getElementById('disQuan').innerHTML = "Quantity: " + quan;
-        document.getElementById('tr').innerHTML="TRACKING  NUMBER";
-
-        document.getElementById('note').innerHTML="*1(ONE) ITEM PER TRANSACTION";
-
-        // Calculate total price
-        var totalPrice = price * quan;
-        document.getElementById('total').innerHTML = "TOTAL:₱ " + totalPrice;
-
-        //BARCODE
-        var textToBarcode = randomNumber;
-        JsBarcode("#barcode", textToBarcode);
-    }
-
-    var div = document.getElementById('cent');
-    if (div.style.display === 'none') {
-        div.style.display = 'block'; // Change to 'block' to show div
-    } else {
-        div.style.display = 'none'; // Hide the div
-    }
-
-
-    var inputs = document.querySelectorAll('input[type="text"]');
-
-    fetch('receipt.html')
-    .then(response => response.text())
-    .then(data => {
-        // Insert the content into the receiptContainer div
-        document.getElementById('right-div').innerHTML = data;
-    })
-    .catch(error => console.error('Error:', error));
-            
-  
-}
-
-        <\script>
+    <link rel="stylesheet" href="finalstyle.css">
 
 </head>
 <body>
- 
+   
     <div class="top">
         <div class="container">
           <div class="image">
@@ -116,7 +31,7 @@
     <div class="checkOut">
         <div class="left">
             <div class="image">
-                <img src="ssg\1.png" alt="">
+                <img src="C:\Users\dennt\Documents\ssg-system\1.png" alt="">
             </div>
         </div>
         <div class="right">
@@ -274,230 +189,91 @@
         </div>
     </div>
 
-    <style>
-
-.checkOut{
-    display: flex;
-    justify-content: center;
-    padding: 0px 30px 0px 30px;
     
-}
-body{
-    padding-bottom: 20px;
-}
-.left{
-    width: 50%;
-}
-.right{
-    width: 50%;
-    padding: 0px 20px 0px 20px;
-}
-.image img{
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.top{
-    display: flex;
-    justify-content: center;
-    padding: 10px 0px 10px 0px;
-}
-.text h1{
-    color: #f1f1f1;
-    text-align: center;
-}
-#merch{
-    text-align: center;
-    font-size: 50px;
-}
-.text h5{
-    color:#f1f1f1 ;
-    text-align: center;
+    <script>
+        function Clicked(){
+
+//ENTER KEY PRESSED
+var inputs = document.querySelectorAll('input[type="text"]');
+inputs.forEach(function(input, index) {
+  input.addEventListener('keypress', function(event) {
+      // Check if Enter key is pressed
+      if (event.key === 'Enter') {
+          // Focus on the next input field
+          var nextIndex = index + 1;
+          if (nextIndex < inputs.length) {
+              inputs[nextIndex].focus();
+          }
+      }
+  });
+});
+
+var name = document.getElementById('Name').value;
+var course = document.getElementById('Course').value;
+var year = document.getElementById('Year').value;
+var section = document.getElementById('Section').value;
+var id = document.getElementById('StudentID').value;
+var phone = document.getElementById('PhoneNumber').value;
+var email = document.getElementById('Email').value;
+var color = document.getElementById('Color').value;
+var size = document.getElementById('Size').value;
+var quan = parseInt(document.getElementById('Quantity').value);
+var randomNumber = Math.floor(Math.random() * 100000000);
+var price = 220;
+
+// var div = document.getElementById('center');
+// if (div.style.display === 'none') {
+//     div.style.display = 'block'; // Change to 'block' to show div
+// } 
+
+if (name === "" || course === "" || year === "" || section === "" || id === "" || phone === "" || email === "") {
+  document.getElementById('warn').innerHTML = "*All fields must be filled!";
+} else {
+  document.getElementById('tracknum').innerHTML = randomNumber;
+  document.getElementById('disName').innerHTML = "Name: " + name;
+  document.getElementById('disCourse').innerHTML = "Course: " + course;
+  document.getElementById('disYear').innerHTML = "Year: " + year;
+  document.getElementById('disSection').innerHTML = "Section: " + section;
+  document.getElementById('disID').innerHTML = "Student ID: " + id;
+  document.getElementById('disPhone').innerHTML = "Phone Number: " + phone;
+  document.getElementById('disEmail').innerHTML = "Email: " + email;
+  document.getElementById('disColor').innerHTML = "Color: " + color;
+  document.getElementById('disSize').innerHTML = "Size: " + size;
+  document.getElementById('disQuan').innerHTML = "Quantity: " + quan;
+  document.getElementById('tr').innerHTML="TRACKING  NUMBER";
+
+  document.getElementById('note').innerHTML="*1(ONE) ITEM PER TRANSACTION";
+
+  // Calculate total price
+  var totalPrice = price * quan;
+  document.getElementById('total').innerHTML = "TOTAL:₱ " + totalPrice;
+
+  //BARCODE
+  var textToBarcode = randomNumber;
+  JsBarcode("#barcode", textToBarcode);
 }
 
-.text h1 span{
-    margin-top: -20px;
-    font-size: 10px;
-}
-.top{
-    background-color: #1c1c1c;
-}
-#select, #color, #size, #quantity, #Quantity {
-    width: 130px;
-    height: 25px;
-    font-size: 15px;
-    background-color: #f1f1f1;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px;
-    border-color:#1c1c1c ;
-    border-radius: 5px;
-}
-
-.button{
-    display: flex;
-    justify-content: flex-end;
-}
-.button button{
-    padding: 8px 40px;
-    border-style: none;
-    border-radius: 15px;
-    color: #f1f1f1;
-    border-width: 1px;
-    font-size: 20px;
-    background-color: #1c1c1c;
-   
-}
-
-.button button:hover{
-    padding: 8px 40px;
-    border-color: black;
-
-    border-style: solid;
-    color: #1c1c1c;
-    border-radius: 15px;
-    color: #1c1c1c;
-    font-size: 20px;
-    border-width: 1px;
-    background-color: transparent;
-}
-
-.order{
-    display: flex;
-    justify-content: space-between;
-}
-.infos input{
-    width: 250px;
-    height:35px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    border-style: solid;
-    border-width: 0.3px;
-    border-color: grey;
-    padding-left: 10px;
-    font-size: 17px;
-}
-.head input{
-    padding-left: 20px;
-    width: 110px;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    border-radius: 10px;
-    height: 20px;
-
-}
-.infos{
-    display: flex;
-}
-.infos h3{
-    font-size: 15px;
-}
-.left, .right{
-    width: 50%;
-}
-.details{
-    display: flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
-}
-.receipt{
-    display: flex;
-    justify-content: center;
-    
-}
-.records p{
-    font-weight: normal;
-}
-#header{
-    text-align: center;
-}
-.records{
-    
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.records h4{
-    margin-bottom: 4px;
-}
-.center{
-    border-style: dashed;
-    border-color: #1c1c1c;
-    padding: 30px 10px 30px 10px;
-    border-width: 0.5px;
-    border-radius: 20px;
-}
-.total{
-    display: flex;
-    justify-content: flex-end;
-}
-
-#cent{
-    display: none;
-}
-#Quantity, .head select{
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 7px;
-    border-color: black;
-}
-
-@media screen and (max-width:650px) {
-    .checkOut{
-        display: grid;
-    }
-    .infos{
-        display: grid;
-    }
-    .left, .right{
-        width: 100%;
-    }
-    .details{
-        display: grid;
-    }
-    .button{
-       justify-content: center;
-    }
-    .left input, .right input{
-        width: 100%;
-    }
-    .right{
-        padding: 0;
-    }
-     .head select{
-        width: 100px;
-        height: 30px;
-        text-align: center;
-        margin-bottom: 10px;
-        background-color: transparent;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 7px;
-        border-color: black;
-    }
-
-    #Quantity{
-        width: 80px;
-       
-    }
-
-    .button button{
-        width: 100%;
-        font-size: 15px;
-    }
+var div = document.getElementById('cent');
+if (div.style.display === 'none') {
+  div.style.display = 'block'; // Change to 'block' to show div
+} else {
+  div.style.display = 'none'; // Hide the div
 }
 
 
+var inputs = document.querySelectorAll('input[type="text"]');
 
-<\style>
-    
+fetch('receipt.html')
+.then(response => response.text())
+.then(data => {
+  // Insert the content into the receiptContainer div
+  document.getElementById('right-div').innerHTML = data;
+})
+.catch(error => console.error('Error:', error));
+      
+
+}
+
+    </script>
 </body>
 </html>
